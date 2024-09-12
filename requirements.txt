@@ -1,0 +1,12 @@
+flask
+flask-cors
+transformers
+torch
+spaCy
+nltk
+PyPDF2
+tika
+pyotp
+email-validator
+profanity-check
+gunicorn
