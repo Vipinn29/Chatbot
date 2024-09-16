@@ -1,0 +1,14 @@
+cd C:\Users\DeLL\Chatbot\src
+
+SET PATH=C:\Users\DeLL\AppData\Local\Programs\Python\Python310;C:\Users\DeLL\AppData\Local\Programs\Python\Python310\Scripts;C:\Users\DeLL\AppData\Local\Programs\Python\Python310\Lib;C:\Users\DeLL\AppData\Local\Programs\Python\Python310\include
+
+python --version
+>>> Python 3.10.11
+
+C:\Users\DeLL\Chatbot\virtual_env\Scripts\activate.bat
+
+rasa train
+
+rasa run --enable-api --cors "*"
+
+python app.py

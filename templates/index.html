@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Enterprise Assistant</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+
+<body>
+    <!-- Login Form -->
+    <div id="login-form" class="container">
+        <h2 class="chat-title">Intelligent Enterprise Assistant</h2><br><hr><br><br>
+
+        <h2>Login</h2>
+        <input type="email" id="email" placeholder="Email">
+        <button class="btn" onclick="login()">Generate OTP</button>
+        <div id="loading-otp" class="loading-spinner" style="display:none;"></div>
+    </div>
+
+    <!-- OTP Form -->
+    <div id="otp-form" class="container" style="display:none;">
+        <h2 class="chat-title">Intelligent Enterprise Assistant</h2><br><hr><br><br>
+
+        <h2>Enter OTP</h2>
+        <input type="text" id="otp" placeholder="OTP">
+        <button class="btn" onclick="verifyOTP()">Verify</button>
+        <div id="loading-verify" class="loading-spinner" style="display:none;"></div>
+    </div>
+
+    <!-- Chat Container -->
+    <div id="chat-container" style="display:none;">
+        <h2 class="chat-title-main">Intelligent Enterprise Assistant</h2><br><hr><br>
+        <div id="chat-window" class="chat-window"></div>
+
+        <!-- Typing Indicator -->
+        <div id="typing-indicator" class="typing-indicator" style="display:none;">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+
+        <div class="typing-area">
+            <label for="document-input" class="upload-btn">
+                <i class="fas fa-paperclip"></i>
+                <input type="file" id="document-input" onchange="uploadDocument()" style="display:none;">
+            </label>
+
+            <input type="text" id="user-input" placeholder="Type your message..." class="input-field">
+
+            <button class="send-btn" onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button><br>
+        </div>
+    </div>
+
+    <script src="../static/script.js"></script>
+</body>
+
+</html>
