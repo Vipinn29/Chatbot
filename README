@@ -1,4 +1,4 @@
-cd C:\Users\DeLL\Chatbot\src
+cd C:\Users\DeLL\Chatbot\rasa
 
 SET PATH=C:\Users\DeLL\AppData\Local\Programs\Python\Python310;C:\Users\DeLL\AppData\Local\Programs\Python\Python310\Scripts;C:\Users\DeLL\AppData\Local\Programs\Python\Python310\Lib;C:\Users\DeLL\AppData\Local\Programs\Python\Python310\include
 
