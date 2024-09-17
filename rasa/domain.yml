@@ -11,26 +11,65 @@ intents:
   - ask_hr_policy
   - ask_it_support
   - ask_company_events
+  - ask_leave_policy
+  - ask_maternity_paternity_leave
+  - ask_remote_work_policy
+  - ask_carryover_vacation
+  - ask_workplace_harassment
+  - ask_reset_password
+  - ask_laptop_malfunction
+  - ask_software_available
+  - ask_request_laptop
+  - ask_vpn_access
+  - ask_town_hall
+  - ask_retreat_registration
+  - ask_team_building
+  - ask_department_event
+  - ask_sponsorship
+  - ask_update_personal_info
+  - ask_expense_reports
+  - ask_dress_code
+  - ask_company_policy_updates
+  - ask_department_transfer
+
+entities:
+  - leave_type
+  - department
+
+slots:
+  leave_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: leave_type
+
+  department:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: department
+
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+    - text: "Hey! How are you?"
+    - text: "Hello! How can I help you?"
 
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_did_that_help:
-  - text: "Did that help you?"
+    - text: "Did that help you?"
 
   utter_happy:
-  - text: "Great, carry on!"
+    - text: "Great, carry on!"
 
   utter_goodbye:
-  - text: "Bye"
+    - text: "Bye"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+    - text: "I am a bot, powered by Rasa."
 
   utter_ask_hr_policy:
     - text: "Our office working hours are 9 AM to 6 PM. To apply for leave, visit the HR portal."
@@ -40,6 +79,114 @@ responses:
 
   utter_ask_company_events:
     - text: "The next town hall meeting is on 15th November. You can register via the events portal."
+  
+  utter_leave_policy:
+    - text: "The company offers 18 annual leaves per year along with public holidays."
+    - text: "You get 18 annual leaves each year. If you're on sick leave for more than 3 days, a doctor's note is required."
+    - text: "Employees are entitled to 18 annual leaves each year. Make sure to use them within the calendar year."
+
+  utter_maternity_paternity_leave:
+    - text: "Maternity leave is 12 weeks, and paternity leave is 2 weeks. Apply via the HR portal."
+    - text: "You can request maternity leave for 12 weeks or paternity leave for 2 weeks on the HR portal."
+    - text: "For maternity (12 weeks) or paternity (2 weeks) leave, use the Leave of Absence form in the HR portal."
+
+  utter_remote_work_policy:
+    - text: "Employees can work remotely up to 3 days per week with manager approval."
+    - text: "You are allowed to work remotely up to 3 days per week, as long as you get approval from your manager."
+    - text: "The company permits remote work up to 3 days a week, with your manager's approval."
+
+  utter_carryover_vacation:
+    - text: "Unused vacation days must be used within the calendar year and cannot be carried over."
+    - text: "Make sure to use all your vacation days within the current year, as they don't carry over."
+    - text: "Vacation days are not carried over to the next year. Use them by year-end."
+
+  utter_workplace_harassment:
+    - text: "You can report workplace harassment or discrimination anonymously via the online HR complaint form."
+    - text: "Incidents of harassment or discrimination can be reported through the HR portal anonymously."
+    - text: "To report harassment or discrimination, use the online HR complaint form or contact the HR manager directly."
+
+  utter_reset_password:
+    - text: "You can reset your company email password by using the IT Support portal and selecting 'Forgot Password'."
+    - text: "To reset your company email password, visit the IT Support portal and click on 'Forgot Password'."
+    - text: "Go to the IT portal and select 'Forgot Password' to reset your email password."
+
+  utter_laptop_malfunction:
+    - text: "For laptop malfunctions, open a ticket through the IT Helpdesk. A technician will respond within 24 hours."
+    - text: "Submit a ticket via the IT Helpdesk if your laptop is malfunctioning. You'll get help within 24 hours."
+    - text: "Open a support ticket on the IT Helpdesk for any laptop issues, and a technician will assist you within 24 hours."
+
+  utter_software_available:
+    - text: "Employees can access Microsoft Office Suite, Zoom, and Adobe Creative Cloud through the IT Portal."
+    - text: "We provide Microsoft Office, Zoom, and Adobe Creative Cloud. You can download them from the IT Portal."
+    - text: "Employees have access to Microsoft Office Suite, Zoom, and Adobe Creative Cloud. Download from the IT portal."
+
+  utter_request_laptop:
+    - text: "If your laptop is over 3 years old, or not functioning, request a new one via the IT Helpdesk form."
+    - text: "You can request a laptop replacement if your current one is outdated by submitting a form in the IT Helpdesk."
+    - text: "To get a new laptop, if yours is outdated or not working, submit a request via the IT Helpdesk."
+
+  utter_vpn_access:
+    - text: "Instructions for VPN setup are available in the IT Knowledge Base, and you'll need your company credentials."
+    - text: "Check the IT Knowledge Base for VPN setup instructions. You'll need your company credentials to access it."
+    - text: "To access the company VPN, follow the setup instructions in the IT Knowledge Base using your company credentials."
+
+  utter_town_hall:
+    - text: "The next town hall meeting is on October 12, 2024, at 10 AM in the main conference room."
+    - text: "Our next town hall meeting is scheduled for October 12, 2024, at 10 AM in the main conference room."
+    - text: "Mark your calendar for the next town hall meeting: October 12, 2024, at 10 AM."
+
+  utter_retreat_registration:
+    - text: "You can register for the annual company retreat via the events section on the intranet by September 1."
+    - text: "Register for the company retreat in the events section on the company intranet before September 1."
+    - text: "To register for the annual retreat, visit the events section on the company intranet before the September 1 deadline."
+
+  utter_team_building:
+    - text: "A virtual escape room event is planned for all departments on November 5, 2024."
+    - text: "Our next team-building event is a virtual escape room on November 5, 2024."
+    - text: "A virtual escape room event will take place on November 5, 2024, for team-building."
+
+  utter_department_event:
+    - text: "Submit an event request form to HR at least 2 weeks in advance to organize a department event."
+    - text: "You can organize a department event by submitting a form to HR at least 2 weeks before the event."
+    - text: "To organize a department event, submit an event request form to HR 2 weeks in advance for approval."
+
+  utter_sponsorship:
+    - text: "For sponsorship inquiries, contact the Marketing team. They handle external industry event sponsorships."
+    - text: "You can reach out to the Marketing team for sponsorship of external industry events."
+    - text: "For external event sponsorships, contact the Marketing team, who manages partnerships."
+
+  utter_update_personal_info:
+    - text: "You can update your personal information in the Employee Self-Service Portal."
+    - text: "To update personal information like your address or emergency contact, use the Employee Self-Service Portal."
+    - text: "Use the Employee Self-Service Portal to update your personal details like address or emergency contacts."
+
+  utter_expense_reports:
+    - text: "Submit expense reports by the 25th of each month through the company’s finance software for reimbursement."
+    - text: "Expense reports can be submitted by the 25th of each month using the company's finance software."
+    - text: "Make sure to submit expense reports by the 25th through the finance system for timely reimbursement."
+
+  utter_dress_code:
+    - text: "We follow a business-casual dress code from Monday to Thursday and casual on Fridays."
+    - text: "The company's dress code is business-casual from Monday to Thursday, and casual on Fridays."
+    - text: "Monday to Thursday is business-casual, and Friday is casual dress."
+
+  utter_company_policy_updates:
+    - text: "Check the HR Portal for the latest updates on company policies."
+    - text: "The latest company policy updates are posted regularly in the HR Portal and sent via email."
+    - text: "Find the latest updates on company policies in the HR Portal or your company email."
+
+  utter_department_transfer:
+    - text: "You can apply for a department transfer through the Job Openings section in the company’s intranet."
+    - text: "Submit a request for department transfer through the Job Openings section in the company’s intranet."
+    - text: "You can request a transfer to another department via the Job Openings section on the intranet."
+
+  utter_default:
+    - text: "Sorry, I didn't understand that. Could you rephrase or ask something else?"
+
+actions:
+  - action_leave_balance
+  - action_expense_report_status
+  - action_default_fallback
 
 session_config:
   session_expiration_time: 60

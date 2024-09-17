@@ -25,3 +25,26 @@
 #         dispatcher.utter_message(text="Hello World!")
 #
 #         return []
+
+# from rasa_sdk import Action
+# from rasa_sdk.executor import CollectingDispatcher
+
+# class ActionLeaveBalance(Action):
+#     def name(self) -> str:
+#         return "action_leave_balance"
+
+#     def run(self, dispatcher: CollectingDispatcher, tracker, domain):
+#         # Example logic to fetch leave balance
+#         leave_balance = "You have 5 annual leaves remaining."
+#         dispatcher.utter_message(text=leave_balance)
+#         return []
+
+# class ActionExpenseReportStatus(Action):
+#     def name(self) -> str:
+#         return "action_expense_report_status"
+
+#     def run(self, dispatcher: CollectingDispatcher, tracker, domain):
+#         # Example logic to fetch expense report status
+#         expense_status = "Your last expense report was approved on August 25."
+#         dispatcher.utter_message(text=expense_status)
+#         return []

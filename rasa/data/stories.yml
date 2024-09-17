@@ -43,3 +43,85 @@ stories:
   steps:
   - intent: ask_company_events
   - action: utter_ask_company_events
+
+- story: check_leave_policy
+  steps:
+    - intent: ask_leave_policy
+    - action: utter_leave_policy
+
+- story: check_maternity_paternity_leave
+  steps:
+    - intent: ask_maternity_paternity_leave
+    - action: utter_maternity_paternity_leave
+- story: check_remote_work_policy
+  steps:
+    - intent: ask_remote_work_policy
+    - action: utter_remote_work_policy
+- story: check_carryover_vacation
+  steps:
+    - intent: ask_carryover_vacation
+    - action: utter_carryover_vacation
+- story: report_workplace_harassment
+  steps:
+    - intent: ask_workplace_harassment
+    - action: utter_workplace_harassment
+- story: reset_email_password
+  steps:
+    - intent: ask_reset_password
+    - action: utter_reset_password
+- story: laptop_malfunction
+  steps:
+    - intent: ask_laptop_malfunction
+    - action: utter_laptop_malfunction
+- story: check_available_software
+  steps:
+    - intent: ask_software_available
+    - action: utter_software_available
+- story: request_new_laptop
+  steps:
+    - intent: ask_request_laptop
+    - action: utter_request_laptop
+- story: vpn_access
+  steps:
+    - intent: ask_vpn_access
+    - action: utter_vpn_access
+- story: check_town_hall
+  steps:
+    - intent: ask_town_hall
+    - action: utter_town_hall
+- story: register_for_retreat
+  steps:
+    - intent: ask_retreat_registration
+    - action: utter_retreat_registration
+- story: team_building_event
+  steps:
+    - intent: ask_team_building
+    - action: utter_team_building
+- story: organize_department_event
+  steps:
+    - intent: ask_department_event
+    - action: utter_department_event
+- story: sponsorship_event
+  steps:
+    - intent: ask_sponsorship
+    - action: utter_sponsorship
+- story: update_personal_info
+  steps:
+    - intent: ask_update_personal_info
+    - action: utter_update_personal_info
+- story: submit_expense_reports
+  steps:
+    - intent: ask_expense_reports
+    - action: utter_expense_reports
+- story: check_dress_code
+  steps:
+    - intent: ask_dress_code
+    - action: utter_dress_code
+- story: company_policy_updates
+  steps:
+    - intent: ask_company_policy_updates
+    - action: utter_company_policy_updates
+- story: request_department_transfer
+  steps:
+    - intent: ask_department_transfer
+    - action: utter_department_transfer

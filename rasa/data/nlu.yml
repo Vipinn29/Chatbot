@@ -107,3 +107,145 @@ nlu:
     - When is the next company event?
     - How can I register for the town hall meeting?
     - What are the upcoming events?
+
+- intent: ask_leave_policy
+  examples: |
+    - Can you explain the leave policy?
+    - What are the rules for taking leaves?
+    - How many annual leaves do we get?
+    - What's the leave policy of the company?
+    - Tell me about the company's leave policy.
+
+- intent: ask_maternity_paternity_leave
+  examples: |
+    - How do I apply for maternity leave?
+    - What are the steps to apply for paternity leave?
+    - Can I apply for paternity leave online?
+    - What's the process for maternity leave?
+    - How do I request maternity leave?
+- intent: ask_remote_work_policy
+  examples: |
+    - Can I work remotely?
+    - What's the remote work policy?
+    - How many days can I work from home?
+    - What's the company's work from home policy?
+    - Do we have a remote work option?
+- intent: ask_carryover_vacation
+  examples: |
+    - Can I carry over my unused vacation days?
+    - Can vacation days be carried over to the next year?
+    - What happens to unused vacation days?
+    - Do vacation days roll over?
+    - Can I use vacation days next year?
+- intent: ask_workplace_harassment
+  examples: |
+    - How do I report workplace harassment?
+    - Can I report discrimination at work?
+    - Where can I file a harassment complaint?
+    - Who do I contact for harassment issues?
+    - How can I report workplace discrimination?
+- intent: ask_reset_password
+  examples: |
+    - How do I reset my company email password?
+    - Can you help me reset my email password?
+    - I forgot my email password, what should I do?
+    - How to recover my company email password?
+    - How can I change my email password?
+- intent: ask_laptop_malfunction
+  examples: |
+    - My laptop isn't working, what do I do?
+    - Who do I contact if my laptop malfunctions?
+    - How do I report a malfunctioning laptop?
+    - My laptop has an issue, can you help?
+    - What should I do if my laptop breaks down?
+- intent: ask_software_available
+  examples: |
+    - What software do we have access to?
+    - Which software is provided by the company?
+    - Do we get access to Microsoft Office?
+    - Can I use Adobe Creative Cloud?
+    - Is Zoom available for employees?
+- intent: ask_request_laptop
+  examples: |
+    - Can I get a new laptop if mine is old?
+    - How do I request a new laptop?
+    - Can I request a laptop replacement?
+    - What should I do if I need a new laptop?
+    - My laptop is old, can I request an upgrade?
+- intent: ask_vpn_access
+  examples: |
+    - How do I access the company VPN?
+    - Can I use VPN for remote work?
+    - What's the process for VPN setup?
+    - How do I set up the VPN for the company network?
+    - How do I connect to the company VPN?
+- intent: ask_town_hall
+  examples: |
+    - When is the next town hall meeting?
+    - Can you tell me about the next town hall?
+    - When is the upcoming company meeting?
+    - What time is the next town hall?
+    - When is the next company-wide meeting?
+- intent: ask_retreat_registration
+  examples: |
+    - How do I register for the company retreat?
+    - Can I sign up for the annual retreat?
+    - What's the registration process for the retreat?
+    - How do I enroll for the company retreat?
+    - When can I register for the annual retreat?
+- intent: ask_team_building
+  examples: |
+    - Are there any team-building activities planned?
+    - When is the next team-building event?
+    - What are the upcoming team-building activities?
+    - Is there a team-building event this quarter?
+    - Can you tell me about the team-building event?
+- intent: ask_department_event
+  examples: |
+    - How do I organize a department event?
+    - Can I plan a department event?
+    - What is the process for setting up a department event?
+    - Who do I contact to organize a department event?
+    - How can I schedule an event for my department?
+- intent: ask_sponsorship
+  examples: |
+    - Who do I contact for event sponsorship?
+    - Can I get sponsorship for an external event?
+    - Who handles sponsorship for external industry events?
+    - How do I request sponsorship for an event?
+    - Can the company sponsor an external event?
+- intent: ask_update_personal_info
+  examples: |
+    - How do I update my personal information?
+    - Where can I change my emergency contact info?
+    - How do I update my address in the system?
+    - Where can I update my phone number?
+    - How do I change my contact information in the system?
+- intent: ask_expense_reports
+  examples: |
+    - What's the process for submitting an expense report?
+    - How do I file an expense report?
+    - Can you tell me the expense report submission process?
+    - How do I submit my expenses for reimbursement?
+    - What is the process for expense report submission?
+- intent: ask_dress_code
+  examples: |
+    - What's the company's dress code policy?
+    - What should I wear to work?
+    - Is there a dress code for the office?
+    - Can you explain the office dress code?
+    - What is the dress code at work?
+- intent: ask_company_policy_updates
+  examples: |
+    - Where can I find the latest company policies?
+    - How do I check for company policy updates?
+    - Where can I see updates on company policies?
+    - How do I stay updated on company policies?
+    - Are there any updates on the company policies?
+- intent: ask_department_transfer
+  examples: |
+    - How do I apply for a department transfer?
+    - Can I transfer to another department?
+    - What's the process for a department transfer?
+    - How do I request to transfer to a different department?
+    - How do I apply for an internal department transfer?
