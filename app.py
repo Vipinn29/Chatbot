@@ -8,9 +8,7 @@ from werkzeug.utils import secure_filename
 import os
 import PyPDF2
 from transformers import pipeline
-import warnings
-
-warnings.filterwarnings("ignore", message="`clean_up_tokenization_spaces` was not set")
+import concurrent.futures
 
 app = Flask(__name__)
 
@@ -82,8 +80,7 @@ def webhook():
 
 
 # Initialize the summarization pipeline
-model_name = "sshleifer/distilbart-cnn-12-6"
-summarizer = pipeline("summarization", model=model_name)
+summarizer = pipeline("summarization", model='t5-small')
 
 # Function to extract text from PDF
 def extract_text_from_pdf(file_path):
@@ -95,23 +92,26 @@ def extract_text_from_pdf(file_path):
     return text
 
 # Function to summarize the document using transformers
-def summarize_text(text, chunk_size=1000):
+def summarize_text(text, chunk_size=1000, max_workers=6):
     # Split the text into smaller chunks
     text_chunks = [text[i:i+chunk_size] for i in range(0, len(text), chunk_size)]
     
-    # Summarize each chunk
-    chunk_summaries = []
-    for chunk in text_chunks:
-        summary = summarizer(chunk, max_length=500, min_length=50, do_sample=False)
-        chunk_summaries.append(summary[0]['summary_text'])
-
+    # Function to summarize a chunk
+    def summarize_chunk(chunk):
+        input_length = len(chunk.split())
+        # Set max_length to be about 60% of input length, but no more than 250
+        max_len = min(int(input_length * 0.6), 150)
+        summary = summarizer(chunk, max_length=max_len, min_length=25, do_sample=False)
+        return summary[0]['summary_text']
+    
+    # Use ThreadPoolExecutor for parallel summarization
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+        chunk_summaries = list(executor.map(summarize_chunk, text_chunks))
+    
     # Combine all chunk summaries into a final summary
     combined_summary = ' '.join(chunk_summaries)
-
-    # Optionally, summarize the combined summary for a more concise version
-    final_summary = summarizer(combined_summary, max_length=500, min_length=50, do_sample=False)
     
-    return final_summary[0]['summary_text']
+    return combined_summary
 
 # Route to handle document upload
 @app.route('/upload-document', methods=['POST'])

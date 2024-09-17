@@ -129,15 +129,28 @@ async function uploadDocument() {
     // Show loading spinner during document upload
     showLoading();
 
-    const response = await fetch('/upload-document', {
-        method: 'POST',
-        body: formData
-    });
+    try {
+        const response = await fetch('/upload-document', {
+            method: 'POST',
+            body: formData
+        });
 
-    hideLoading();
+        hideLoading();
 
-    const data = await response.json();
-    displayMessage(data.summary, 'bot');
+        if (!response.ok) {
+            throw new Error('Document upload failed');
+        }
+
+        const data = await response.json();
+        
+        // Display the summary received from the backend
+        displayMessage(data.summary, 'bot');
+        
+    } catch (error) {
+        hideLoading();
+        alert('There was an error uploading the document or generating the summary.');
+        console.error(error);
+    }
 }
 
 // Function to display messages in the chat window
