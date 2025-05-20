@@ -15,6 +15,10 @@ app = Flask(__name__)
 RASA_ENDPOINT = "http://localhost:5005/webhooks/rest/webhook"
 user_otps = {}  # To store OTPs
 
+SMTP_SERVER = os.getenv("SMTP_SERVER")
+SMTP_PORT = os.getenv("SMTP_PORT")
+SMTP_EMAIL = os.getenv("SMTP_EMAIL")
+SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")
 
 @app.route('/')
 def home():
@@ -23,12 +27,16 @@ def home():
 def send_otp(email, otp):
     msg = MIMEText(f'Your OTP is: {otp}')
     msg['Subject'] = 'Your 2FA OTP'
-    msg['From'] = 'bytebazaar22@gmail.com'
+    msg['From'] = SMTP_EMAIL
     msg['To'] = email
 
-    with smtplib.SMTP('smtp.gmail.com', 587) as server:
+    if not SMTP_SERVER or not SMTP_PORT or not SMTP_EMAIL or not SMTP_PASSWORD:
+        raise ValueError("SMTP configuration environment variables are not properly set.")
+
+    with smtplib.SMTP(SMTP_SERVER, int(SMTP_PORT)) as server:
+        server.connect(SMTP_SERVER, int(SMTP_PORT))
         server.starttls()
-        server.login('bytebazaar22@gmail.com', 'inekhiosoubwlhjc')
+        server.login(SMTP_EMAIL, SMTP_PASSWORD)
         server.send_message(msg)
 
 @app.route('/login', methods=['POST'])

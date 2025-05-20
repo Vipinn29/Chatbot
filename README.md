@@ -14,8 +14,8 @@ This project is a chatbot built using the Rasa framework. It includes the necess
 
 On Windows, run the following command to activate the virtual environment:
 
-```bat
-C:\Users\DeLL\Chatbot\virtual_env\Scripts\activate.bat
+```
+virtual_env\Scripts\activate
 ```
 
 2. **Verify Python version**
